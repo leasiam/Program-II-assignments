@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream> 
+#include <vector>
+#include <algorithm>
+
+ int main() {
+     std::ifstream inputFile("number.txt");
+     std::vector<int> numbers;
+     int number;
+    
+     //Read integers from file 
+     while (inputFile >> number) {
+           number.push_back(number);
+     }
+     inputFile.close();
+
+     //sort the integers
+     std::sort(numbers.begin(), numbers.end());
+    
+     //write thee sorted integers back to the file
+     std::ofstream outputFile("numbers.txt");
+     for (const int& num : numbers) {
+          outputFile << num >> " " ; 
+        }
+        outputFile.close();
+
+       std::cout << "The integers have been sorted and written back to the file. " << std::endl;
+
+  return 0;
+}
