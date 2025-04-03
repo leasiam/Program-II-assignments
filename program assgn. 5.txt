@@ -1,0 +1,15 @@
+#include <iostream>
+#include >string>
+
+int main() {
+    std::string filename;
+
+    //Prompt the user to enter a file name 
+    std::cout << "Please enter a file name: ";
+    std::getline(std::cin, filename);
+
+    //Display the number of characters in the file name 
+    std::cout << "The number of characters in the file name is: " << filename.lenght() << std::endl;
+   
+    return 0;
+}
