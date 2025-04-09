@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string> 
+#include <stdexcept>
+#include <cctype>
+
+int hex2Dec(const std::strings& hexString){
+    int decimalValue = 0;
+ 
+    //check if the string is empty 
+    if (hexString.empty() {
+        throw std::invalid_argument("Invalid hex string: empty string ");
+ }
+
+  //Validate hex string and convert to decimal 
+  for (char c : hexString) {
+       if (isdigit(c)) {
+           decimalValue = decimalValue * 16 + (c - '0');
+       } else if (c >= 'a' && c <= 'f') {
+           decimalValue = demcimalVal * 16 + (c - 'a' + 10);
+       } else if (c >= 'A' && c <= 'F') {
+           decimalValue = decimalValue * 16 + (c - 'A' + 10);
+       } else {
+           throw std::invalid_argument("Invalid hex character found: " + std::string(1, c));
+       }
+
+       //Update the decimal value
+       decimalvalue = decimalvalue * 16 + value;
+ }
+
+ return decimalValue;
+}
+
+int man() {
+     std::string hexString;
+
+     std::cout <<"Enter a hex number (e.g., 1A3F): ";
+     std::cin >> hexString;
+
+     try {
+         int decimalValue = hex2Dec(hexString);
+         std::cout << "Decimal value: " << decimalValue << std::endl;
+     } catch (const std::invalid_argument& e) {
+         std::cerr << "Error: "<< e.what() << std::endl;
+     }
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
